@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<script>
+function closeWin(){
+    window.close();
+}
+</script>
+
 <head>
     <title>福祉車両送迎デモ</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
@@ -266,7 +272,7 @@
                                                         
                                                          <input type="text" name="footer-email" required="">
                                                          <button class="btn waves-effect waves-light btn-primary btn-outline-primary btn-sm">お客さまの名前で検索</button>
-                                                        <button class="btn waves-effect waves-light btn-primary btn-outline-primary btn-sm">選択したお客さまを追加</button>
+                                                        <button class="btn waves-effect waves-light btn-primary btn-outline-primary btn-sm" onclick="closeWin()">選択したお客さまを追加</button>
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
