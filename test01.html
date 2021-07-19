@@ -107,7 +107,8 @@
              directionsRenderer.setDirections(response)
           }
        })
-  
+      // 座標テスト
+       test2()
       //End Function
       }
 
@@ -125,7 +126,8 @@
 
      //Event Hander 
     function getClickLatLng(lat_lng, map) {
-
+     //
+     console.log(lat_lng) ;
      // マーカーを設置
       var marker = new google.maps.Marker({
         position: lat_lng,

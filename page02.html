@@ -107,7 +107,7 @@
              directionsRenderer.setDirections(response)
           }
        })
-  
+       
       //End Function
       }
 
@@ -115,6 +115,7 @@
       function test2() {
          // クリックイベントを追加
          listener1 =  map.addListener('click', function(e) {
+         
            getClickLatLng(e.latLng, map);
          });
          
@@ -125,6 +126,7 @@
 
      //Event Hander 
     function getClickLatLng(lat_lng, map) {
+        
 
      // マーカーを設置
       var marker = new google.maps.Marker({
