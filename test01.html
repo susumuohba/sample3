@@ -154,7 +154,9 @@ directionsRenderer2.setOptions({
     　
       // 座標テスト
        alert("Go_to_test2");
-       test2() ;
+       //test2() ;
+       // 現在地追加
+       test4() ;
       //End Function
       }
 
@@ -193,6 +195,34 @@ directionsRenderer2.setOptions({
    // 新しく追加
       test3() 
     //End function
+    }
+
+    // 現在地追加
+    function test4(){
+        var car1 = {
+          lat: 35.179334249023476, // 緯度
+          lng: 136.8859653393868 // 経度
+        };
+
+        var car2 = {
+          lat: 35.140756008230504, // 緯度
+          lng: 136.91691695510863 // 経度
+        };
+
+        marker1 = new google.maps.Marker({ // マーカーの追加
+        position: car1, // マーカーを立てる位置を指定
+        map: map // マーカーを立てる地図を指定
+        content: "1号車"
+        });
+
+        marker2 = new google.maps.Marker({ // マーカーの追加
+        position: car2, // マーカーを立てる位置を指定
+        map: map // マーカーを立てる地図を指定
+        content: "2号車"
+        });
+
+
+
     }
 
      // ルート削除 
