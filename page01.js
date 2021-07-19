@@ -198,6 +198,13 @@ function test2(){
 
      //td要素にテキストを追加
      cellElemC2.appendChild(document.createTextNode('中区○○○○'));
+
+     //************************************/
+
+     document.getElementById("car1text").innerText = "1号車　予測送迎時間50分";
+     document.getElementById("car2text").innerText = "2号車　予測送迎時間40分";
+     document.getElementById("car3text").innerText = "3号車　予測送迎時間40分";
+
     
   
         
