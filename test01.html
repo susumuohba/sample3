@@ -108,12 +108,14 @@
           }
        })
       // 座標テスト
-       test2()
+       alert("Go_to_test2");
+       test2() ;
       //End Function
       }
 
       // Button Event
       function test2() {
+           alert("test2");
          // クリックイベントを追加
          listener1 =  map.addListener('click', function(e) {
            getClickLatLng(e.latLng, map);
