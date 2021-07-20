@@ -106,8 +106,53 @@ directionsRenderer2.setOptions({
        })
     　
 
-      //End Function
+ // 別のルートを表示
+ directionsService3 = new google.maps.DirectionsService();
+ directionsRenderer3 = new google.maps.DirectionsRenderer();
+// オプション設定
+directionsRenderer3.setOptions({
+//    suppressMarkers: false,
+//    suppressPolylines: true,
+//    suppressInfoWindows: false,
+//    draggable: true,
+//    preserveViewport: false,
+polylineOptions: {
+    strokeColor: '#2f4f4f'
+//     strokeColor: '#ff0000',
+//      strokeOpacity: 0.5,
+//      strokeWeight: 3
+}
+});
+
+
+
+ directionsRenderer3.setMap(map);
+  var request = {
+      origin: "愛知県名古屋市熱田区桜田町19-18",
+      destination: "愛知県名古屋市熱田区桜田町19-18",
+      waypoints: [
+         { location: "愛知県名古屋市中区大須2丁目10−39" },
+         { location: "愛知県名古屋市中区大須4丁目11－15" },
+       ], 
+      travelMode: google.maps.DirectionsTravelMode.DRIVING,
+      unitSystem: google.maps.DirectionsUnitSystem.METRIC,
+      optimizeWaypoints: true,
+      avoidHighways: false,
+      avoidTolls: false
+  }
+
+   directionsService3.route(request,
+     function(response,status){
+      if (status == google.maps.DirectionsStatus.OK){
+         //console.log(response.routes[0].legs[0].distance.text)
+         //console.log(response.routes[0].legs[0].duration.text)
+         directionsRenderer3.setDirections(response)
       }
+   })
+
+
+      //End Function
+  }
 <!---- --->
 function clicktr(){
    document.getElementById("tr1").style.backgroundColor="#E5EDFD";
