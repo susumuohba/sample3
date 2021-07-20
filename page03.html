@@ -150,6 +150,51 @@ directionsRenderer2.setOptions({
              directionsRenderer2.setDirections(response)
           }
        })
+
+        // 別のルートを表示
+ directionsService3 = new google.maps.DirectionsService();
+ directionsRenderer3 = new google.maps.DirectionsRenderer();
+// オプション設定
+directionsRenderer3.setOptions({
+//    suppressMarkers: false,
+//    suppressPolylines: true,
+//    suppressInfoWindows: false,
+//    draggable: true,
+//    preserveViewport: false,
+polylineOptions: {
+    strokeColor: '#008000' ,
+//     strokeColor: '#ff0000',
+      strokeOpacity: 0.7,
+      strokeWeight: 5
+}
+});
+
+
+
+ directionsRenderer3.setMap(map);
+  var request = {
+      origin: "愛知県名古屋市熱田区桜田町19-18",
+      destination: "愛知県名古屋市熱田区桜田町19-18",
+      waypoints: [
+         { location: "愛知県名古屋市中区大須2丁目10−39" },
+         { location: "愛知県名古屋市中区大須4丁目11－15" },
+       ], 
+      travelMode: google.maps.DirectionsTravelMode.DRIVING,
+      unitSystem: google.maps.DirectionsUnitSystem.METRIC,
+      optimizeWaypoints: true,
+      avoidHighways: false,
+      avoidTolls: false
+  }
+
+   directionsService3.route(request,
+     function(response,status){
+      if (status == google.maps.DirectionsStatus.OK){
+         //console.log(response.routes[0].legs[0].distance.text)
+         //console.log(response.routes[0].legs[0].duration.text)
+         directionsRenderer3.setDirections(response)
+      }
+   })
+
     　
        // 現在地追加
        test4() ;
@@ -169,6 +214,11 @@ directionsRenderer2.setOptions({
           lng: 136.91691695510863 // 経度
         };
 
+         var car3 = {
+          lat: 35.91, // 緯度
+          lng: 136.5417 // 経度
+        };
+
         var marker1 = new google.maps.Marker({ // マーカーの追加
         position: car1, // マーカーを立てる位置を指定
         map: map ,// マーカーを立てる地図を指定
@@ -185,6 +235,16 @@ directionsRenderer2.setOptions({
         //content: "",
          icon: {
 		  url: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',                      //アイコンのURL
+		  scaledSize: new google.maps.Size(40, 40) //サイズ
+        }
+        });
+
+         var marker3 = new google.maps.Marker({ // マーカーの追加
+        position: car3, // マーカーを立てる位置を指定
+        map: map ,// マーカーを立てる地図を指定
+        //content: "",
+         icon: {
+		  url: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',                      //アイコンのURL
 		  scaledSize: new google.maps.Size(40, 40) //サイズ
         }
         });
