@@ -117,10 +117,10 @@ directionsRenderer3.setOptions({
 //    draggable: true,
 //    preserveViewport: false,
 polylineOptions: {
-    strokeColor: '#008000'
+    strokeColor: '#008000' ,
 //     strokeColor: '#ff0000',
-//      strokeOpacity: 0.5,
-//      strokeWeight: 3
+      strokeOpacity: 0.7,
+      strokeWeight: 5
 }
 });
 
